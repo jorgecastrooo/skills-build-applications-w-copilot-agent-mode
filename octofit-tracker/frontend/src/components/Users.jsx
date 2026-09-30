@@ -17,7 +17,7 @@ export default function Users() {
     <CollectionView
       title="Members"
       description="People taking part in the OctoFit community."
-      resource="users"
+      endpoint="/api/users/"
       columns={columns}
     />
   )

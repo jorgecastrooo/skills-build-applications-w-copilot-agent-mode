@@ -24,7 +24,7 @@ export default function Activities() {
     <CollectionView
       title="Activities"
       description="Recent movement logged by your community."
-      resource="activities"
+      endpoint="/api/activities/"
       columns={columns}
     />
   )

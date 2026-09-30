@@ -12,7 +12,7 @@ export default function Teams() {
     <CollectionView
       title="Teams"
       description="The groups bringing consistency and a little friendly competition."
-      resource="teams"
+      endpoint="/api/teams/"
       columns={columns}
     />
   )

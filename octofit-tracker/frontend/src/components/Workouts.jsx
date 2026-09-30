@@ -13,7 +13,7 @@ export default function Workouts() {
     <CollectionView
       title="Workouts"
       description="Ideas for the next session, at a range of effort levels."
-      resource="workouts"
+      endpoint="/api/workouts/"
       columns={columns}
     />
   )

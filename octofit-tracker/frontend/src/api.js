@@ -1,12 +1,12 @@
 const codespaceName = import.meta.env.VITE_CODESPACE_NAME?.trim()
 
 export const API_BASE_URL = codespaceName
-  ? `https://${codespaceName}-8000.app.github.dev/api`
-  : 'http://localhost:8000/api'
+  ? `https://${codespaceName}-8000.app.github.dev`
+  : 'http://localhost:8000'
 
-export async function fetchCollection(resource, signal) {
-  const path = resource.replace(/^\/+|\/+$/g, '')
-  const response = await fetch(`${API_BASE_URL}/${path}/`, { signal })
+export async function fetchCollection(endpoint, signal) {
+  const path = endpoint.startsWith('/') ? endpoint : `/${endpoint}`
+  const response = await fetch(`${API_BASE_URL}${path}`, { signal })
 
   if (!response.ok) {
     throw new Error(`Request failed (${response.status})`)

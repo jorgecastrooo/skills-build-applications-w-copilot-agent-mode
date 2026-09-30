@@ -1,7 +1,7 @@
 import useCollection from '../useCollection.js'
 
-export default function CollectionView({ title, description, resource, columns }) {
-  const { items, loading, error } = useCollection(resource)
+export default function CollectionView({ title, description, endpoint, columns }) {
+  const { items, loading, error } = useCollection(endpoint)
 
   return (
     <main className="container py-4 py-lg-5">
@@ -30,7 +30,7 @@ export default function CollectionView({ title, description, resource, columns }
             </thead>
             <tbody>
               {items.map((item, index) => (
-                <tr key={item._id ?? `${resource}-${index}`}>
+                <tr key={item._id ?? `${endpoint}-${index}`}>
                   {columns.map((column) => (
                     <td key={column.label}>{column.render(item, index)}</td>
                   ))}

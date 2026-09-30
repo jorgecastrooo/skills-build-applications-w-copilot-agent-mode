@@ -16,7 +16,7 @@ export default function Leaderboard() {
     <CollectionView
       title="Leaderboard"
       description="See how members are progressing through activity points."
-      resource="leaderboard"
+      endpoint="/api/leaderboard/"
       columns={columns}
     />
   )
